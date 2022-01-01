@@ -20,7 +20,7 @@ namespace LMSCore.Repositories
         {
             return table.ToList();
         }
-        public T GetById(object id)
+        public T Get(int id)
         {
             return table.Find(id);
         }
