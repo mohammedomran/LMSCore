@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSCore.Repositories
 {
-    public interface ICourseRepo : IRepo<Course>
+    public interface ICourseRepo : IBaseRepo<Course>
     {
 
     }

@@ -30,7 +30,7 @@ namespace LMSCore.Controllers
         [HttpGet("{id}")]
         public ActionResult<Course> GetCourse(int id)
         {
-            return Ok(CourseRepo.GetById(id));
+            return Ok(CourseRepo.Get(id));
         }
 
 

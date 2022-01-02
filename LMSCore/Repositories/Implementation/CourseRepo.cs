@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSCore.Repositories
 {
-    public class CourseRepo : Repo<Course>, ICourseRepo
+    public class CourseRepo : BaseRepo<Course>, ICourseRepo
     {
         public LMSContext LMSContext { get; }
         public CourseRepo(LMSContext lMSContext):base(lMSContext)

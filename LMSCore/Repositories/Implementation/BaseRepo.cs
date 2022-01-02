@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace LMSCore.Repositories
 {
-    public class Repo<T> : IRepo<T> where T : class
+    public class BaseRepo<T> : IBaseRepo<T> where T : class
     {
         private LMSContext Context = null;
         private DbSet<T> table = null;
-        public Repo(LMSContext _context)
+        public BaseRepo(LMSContext _context)
         {
             Context = _context;
             table = _context.Set<T>();
@@ -20,7 +20,7 @@ namespace LMSCore.Repositories
         {
             return table.ToList();
         }
-        public T GetById(object id)
+        public T Get(int id)
         {
             return table.Find(id);
         }
@@ -35,7 +35,7 @@ namespace LMSCore.Repositories
             Context.Entry(obj).State = EntityState.Modified;
             return obj;
         }
-        public void Delete(object id)
+        public void Delete(int id)
         {
             T existing = table.Find(id);
             table.Remove(existing);
